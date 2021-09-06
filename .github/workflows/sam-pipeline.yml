@@ -15,12 +15,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      # sam build 
-      - run: sam build --use-container
+      # S3 object sync
       - run: aws s3 sync . ${{ secrets.S3_BUCKET }} --delete
       - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} --path "/*"
+      # sam build 
+      - run: sam build --use-container
+      # Run Unit tests- Specify unit tests here 
 
-# Run Unit tests- Specify unit tests here 
-
-# sam deploy
+      # sam deploy
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name samsiteconnordwoods --s3-bucket ${{ secrets.S3_BUCKET }} --capabilities CAPABILITY_IAM --region us-east-1
