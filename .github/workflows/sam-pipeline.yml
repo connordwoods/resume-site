@@ -22,5 +22,5 @@ jobs:
       - run: sam build --use-container
       # Run Unit tests- Specify unit tests here 
 
-      # sam deploy
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name samsiteconnordwoods --s3-bucket ${{ secrets.S3_BUCKET }} --capabilities CAPABILITY_IAM --region us-east-1
+      # sam deploy - MAY NEED TO OBFUSCATE BUCKET NAME LATER (quick fix for regex error due to s3:// prefix in Actions secrets)
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name samsiteconnordwoods --s3-bucket samsiteconnordwoods.com --capabilities CAPABILITY_IAM --region us-east-1
