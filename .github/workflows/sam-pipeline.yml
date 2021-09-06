@@ -1,3 +1,4 @@
+name: CI
 on:
   push:
     branches:
@@ -16,6 +17,8 @@ jobs:
           aws-region: us-east-1
       # sam build 
       - run: sam build --use-container
+      - run: aws s3 sync ./index.html/ ${{ secrets.S3_BUCKET }} --delete
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} --path "/*"
 
 # Run Unit tests- Specify unit tests here 
 
