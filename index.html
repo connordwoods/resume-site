@@ -59,8 +59,9 @@
 										<p>Recent CS grad seeking work in DevOps <br />
 										and cloud architecture roles</p>
 									</header>
-									<p>Welcome to my resume website. Below you will find more information about the skills and qualifications I can bring to your team. Please contact me via email or LinkedIn if you are actively hiring. </p>
-									<p>This site is built using various AWS technologies as a demonstration of knowledge. It is a simple HTML page (with some CSS and JS) hosted in an S3 bucket for which I have purchased a domain name and configured DNS routing via Route 53. The website is also serverless; it uses the AWS Serverless Application Model (SAM) service and an API Gateway to invoke Lambda functions that perform operations such as DynamoDB queries.</p>
+									<p>Welcome to my resume website. Below you will find more information about the skills and qualifications I can bring to your team. Please contact me via email or LinkedIn if you are actively hiring (side bar icons). </p>
+									<p>This site is built using various AWS technologies as a demonstration of knowledge. It is a simple HTML page (with CSS/JS) hosted in an S3 bucket and delivered via CloudFront from edge locations nearest the user. A custom domain is assigned to the distribution by attaching a TLS certification and configuring Route 53 DNS routing.</p>
+									<p>This site is version controlled in GitHub while being continuously integrated and deployed through Actions and SAM templates to automate infrastructure deployment. It is also serverless, using a REST API Gateway to invoke Lambda functions for operations such as DynamoDB queries.</p>
 								</div>
 							</section>
 
@@ -70,11 +71,11 @@
 									<h3>Skills</h3>
 									<p></p>
 									<ul class="feature-icons">
-										<li class="icon solid fa-cloud">AWS - S3, EC2, Lambda, IAM, API, Dynamo, CloudFront, VPC, EBS</li>
-										<li class="icon solid fa-code">Languages - Python, JavaScript, SQL, Bash/CLI, HTML/CSS</li>
-										<li class="icon solid fa-code-branch">CI/CD - Git Actions, Jenkins</li>
+										<li class="icon solid fa-cloud">AWS - S3, Lambda, IAM, API, Dynamo, CloudFront, VPC, EBS, Route 53, ACM, KMS, EC2</li>
+										<li class="icon solid fa-code">Languages - Python, TypeScript, JavaScript, SQL, bash/CLI, HTML/CSS</li>
+										<li class="icon solid fa-code-branch">CI/CD - Git Actions</li>
 										<li class="icon solid fa-desktop">Linux, Windows</li>
-										<li class="icon solid fa-file">IaC - Docker, Kubernetes, Terraform</li>
+										<li class="icon solid fa-file">IaC - AWS SAM & CloudFormation, Docker, Kubernetes</li>
 										<li class="icon solid fa-table">Excel sheets, technical writing and diagrams</li>
 									</ul>
 								</div>
@@ -103,15 +104,16 @@
 									<h3>Projects</h3>
 									<h4>Personal resume website utilizing cloud technologies</h4>
 									<ul class="project-items">
-										<li>Constructed serverless SPA hosted in S3 using CloudFront, Lambda, API Gateway, DynamoDB, Route 53</li>
-										<li>Implemented GitHub Actions to support continuous integration of commits</li>
-										<li>Automated infrastructure deployment and teardown via SAM with YAML templates</li>
-										<li>Secured application against common security threats by adding AWS WAF and ACLs
+										<li>Constructed serverless SPA hosted in S3 using CloudFront, Route 53, SAM, Lambda, API Gateway, DynamoDB</li>
+										<li>Implemented GitHub Actions as CI/CD pipeline to automate infrastructure deployment</li>
+										<li>Secured application against top OWASP web threats by adding AWS WAF and ACLs</li>
 									</ul>
 									<h4>Mobile application "A Better Way" Senior capstone</h4>
 									<ul class="project-items">
-										<li>Worked in a small team to develop a mobile CRUD application to stakeholder specifications</li>
-										<li>Determined software solutions for design specifications and time/budget constraints</li>
+										<li>Collaborated with 4-person team to develop a mobile CRUD application to stakeholder specifications</li>
+										<li>Determined best software solutions based on design choices and time/budget constraints</li>
+										<li>Developed login/signup page and secure storage of users credentials</li>
+										<li>Implemented authorization tokens and proper revocation for protected view pages</li>
 									</ul>
 								</div>
 							</section>
