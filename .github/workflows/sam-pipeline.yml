@@ -18,7 +18,7 @@ jobs:
       # sam build 
       - run: sam build --use-container
       - run: aws s3 sync . ${{ secrets.S3_BUCKET }} --delete
-      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} --path "./site/*"
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} --path "/*"
 
 # Run Unit tests- Specify unit tests here 
 
