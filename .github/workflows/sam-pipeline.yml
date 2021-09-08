@@ -15,12 +15,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-       S3 object sync
+      #S3 object sync
       - run: aws s3 sync . ${{ secrets.S3_BUCKET }} --acl public-read --delete
       - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} --path "/*"
-       sam build 
+      #sam build 
       - run: sam build --use-container
-       Run Unit tests- Specify unit tests here 
+      #Run Unit tests- Specify unit tests here 
 
-       sam deploy - MAY NEED TO OBFUSCATE BUCKET NAME LATER (quick fix for regex error due to s3:// prefix in Actions secrets)
+      #sam deploy - MAY NEED TO OBFUSCATE BUCKET NAME LATER (quick fix for regex error due to s3:// prefix in Actions secrets)
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name samsiteconnordwoods --s3-bucket samsiteconnordwoods.com --capabilities CAPABILITY_IAM --region us-east-1
